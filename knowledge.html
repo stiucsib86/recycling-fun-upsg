@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Recycling Fun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button 
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+       Supporting marketing content 
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }*/
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+      <link rel="shortcut icon" href="ico/favicon.png">
+  </head>
+
+  <body>
+    <script id="leaderboard" type="text/html">
+    <table class="table table-hover">
+      <tr>
+        <th>#</th>
+        <th>Region</th>
+        <th>Recycling rate per person <span>(kg/people)</span> </th>
+        <th>Recycling rate per total <span>(%)</span></th>
+        <th>Difference to the previous month <span>(%)</span></th>
+        <th>Badge</th>
+      </tr>
+      <tbody>
+        {{#data}}
+          {{>items}}
+        {{/data}}
+      </tbody>
+    </table>
+    <legend> Legend: <i class="icon-star"></i> badge</legend>
+    </script>
+
+    <script id="items" type="text/html" class="partial">
+      <tr>
+          <td>{{id}}</td>
+          <td><a href="#">{{player}}</a></td>
+          <td>{{averate_per_house}}</td>
+         <td>
+            <div class="progress progress-striped active">
+              <div class="bar" style="width: {{recycle_percentage}}%;"></div>
+            </div>
+          </td>
+          <td> 
+            {{#inc}}<i class="icon-arrow-up"></i>{{/inc}} 
+            {{#dec}}<i class="icon-arrow-down"></i>{{/dec}} 
+            {{difference}}</td>
+          <td>
+          {{#badge1}}<i class="icon-star"></i>{{/badge1}}
+          {{#badge2}}<i class="icon-search"></i>{{/badge2}}
+          {{#badge3}}<i class="icon-plus"></i>{{/badge3}}
+          </td>
+        </tr>
+    </script>
+
+    <div class="container-narrow">
+      
+      <div class="masthead">
+        
+        <ul class="nav nav-pills pull-right">
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="search/index.html">Search Bin</a></li>
+          <li class="active"><a href="#">Knowledge</a></li>
+        </ul>
+        <h1 class="muted">Recyle Fun!</h1>
+      <!--   <form class="navbar-search pull-right">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+         -->
+      
+      
+      <div id="chart_data" class="row-fluid marketing">
+        <img src="img/recycling_map.jpg" alt="">
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; RecycleFun 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="js/jquery-latest.min.js"  type="text/javascript"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- <script src="js/bootstrap-transition.js"></script>
+     <script src="js/bootstrap-alert.js"></script>
+     <script src="js/bootstrap-modal.js"></script>
+     <script src="js/bootstrap-dropdown.js"></script>
+     <script src="js/bootstrap-scrollspy.js"></script>
+     <script src="js/bootstrap-tab.js"></script>
+     <script src="js/bootstrap-tooltip.js"></script>
+     <script src="js/bootstrap-popover.js"></script>
+     <script src="js/bootstrap-button.js"></script>
+     <script src="js/bootstrap-collapse.js"></script>
+     <script src="js/bootstrap-carousel.js"></script>
+     <script src="js/bootstrap-typeahead.js"></script> -->
+    <script src="js/ICanHaz.js"></script>
+
+    <script>
+      // function listEvents(root) {
+      //   var feed = root.feed;
+      //   var entries = feed.entry || [];
+
+
+       
+      //   // var html = ['<ul>'];
+
+      //   // console.log(entries);
+      //   // for (var i = entries.length - 1; i >= 0; i--) {
+      //   //   var row = $.parseJSON(entries[i].content.$t);
+      //   //   if(!!row){
+      //   //    // console.log(row.player);
+      //   //   }
+      //   // };
+      // }
+    </script>
+
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+var predefined_data = 
+[
+  '[{"ID":"1","player":"Clementi","WasteTotal":"166035","average_per_house":"","recycle_percentage":"","Paper":"94181","Can":"9140","Glass":"19911","Plastic":"29991","Cloth":"8922","Misc":"3890","Garden":"0","Month":"1\/1\/2011","inc":"","dec":"","difference":"","badge":"","id":0},{"ID":"2","player":"AMK","WasteTotal":"12","average_per_house":"","recycle_percentage":"","Paper":"41421","Can":"11","Glass":"12421","Plastic":"124","Cloth":"124","Misc":"123","Garden":"102680","Month":"1\/1\/2011","inc":"","dec":"","difference":"","badge":"","id":1},{"ID":"3","player":"AMK","WasteTotal":"10","average_per_house":"91","recycle_percentage":"12","Paper":"9876","Can":"0","Glass":"12421","Plastic":"124","Cloth":"124","Misc":"123","Garden":"102680","Month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge":"","id":2}]'
+  ,
+  '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]'
+  ,
+  '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]',
+  '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]'
+  ,
+  '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]'
+  ];
+// console.log($.parseJSON(predefined_data[0]));return;
+          var data = [];
+          var p = {};
+          p.data = $.parseJSON($.trim(predefined_data[0]));
+          data['all'] = p;
+          p.data = $.parseJSON($.trim(predefined_data[1]));
+          data['paper'] = p;
+          p.data = $.parseJSON($.trim(predefined_data[2]));
+          data['plastic'] = p;
+          p.data = $.parseJSON($.trim(predefined_data[3]));
+          data['glass'] = p;
+          p.data = $.parseJSON($.trim(predefined_data[4]));
+          data['cans'] =p;
+
+          // var c = $(this).html().toLowerCase();
+          var content = data['all'];
+          // console.log(content);
+          $('#leaderboard_main').html(ich.leaderboard(content));
+
+       
+
+        $('#categories').on('click','a',function(e){
+          e.preventDefault();
+          $(this).parent().siblings().removeClass('active');
+          $(this).parent().addClass('active');
+
+
+          var c = $(this).html().toLowerCase();
+          var content = data[c];
+          // console.log(content);
+          $('#leaderboard_main').html(ich.leaderboard(content));
+
+          //insert data to ajax
+
+        });
+        // setInterval(10000,function(){
+        //   localtion.reload();
+        // })
+      }); 
+    </script>
+
+  </body>
+</html>
