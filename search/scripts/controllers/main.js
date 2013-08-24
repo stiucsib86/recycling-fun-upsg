@@ -30,7 +30,7 @@ angular.module('sgRecyclingBinApp')
   };
 
   $scope.OneMapverlay = function() {
-    var kmlPath = 'data/binsMapLocationKML.php';
+    var kmlPath = 'data/binsMapLocation.kml';
     OneMap.overlayKML(kmlPath);
   };
 
