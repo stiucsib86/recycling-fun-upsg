@@ -2,7 +2,7 @@
 
 angular.module('sgRecyclingBinApp')
 .controller('MainCtrl', function($http, $scope, $timeout) {
-  
+
   var OneMap;
 
 
@@ -22,7 +22,7 @@ angular.module('sgRecyclingBinApp')
     var centerPoint = "28968.103,33560.969";
     var levelNumber = 2;
     OneMap = new GetOneMap('divMain', 'SM', {level: levelNumber, center: centerPoint});
-    
+
     $timeout(function() {
       $scope.OneMapverlay();
     }, 1000);
@@ -58,7 +58,7 @@ angular.module('sgRecyclingBinApp')
   var GetCurrentLevel = function() {
     alert("Current Level:" + OneMap.map.getLevel());
   };
-  
+
   $scope.GetBinsLocation = function() {
     $http({
       method: 'GET',
@@ -73,5 +73,42 @@ angular.module('sgRecyclingBinApp')
     initializeBinLocationChart();
     $scope.GetBinsLocation();
   })();
+
+})
+.controller('UserCtrl', function($http, $scope, $timeout) {
+
+
+  Morris.Donut({
+    element: 'donut-example',
+    data: [
+      {label: "Paper", value: 6},
+      {label: "Can", value: 3},
+      {label: "Glass", value: 7},
+      {label: "Plastic", value: 4},
+      {label: "Cloth", value: 4},
+      {label: "Garden", value: 2},
+      {label: "misc", value: 1}
+    ]
+  });
+
+
+  Morris.Bar({
+    element: 'bar-example',
+    data: [
+      {y: 'April', a: 5, b: 40},
+      {y: 'May', a: 4, b: 65},
+      {y: 'Jun', a: 6, b: 40},
+      {y: 'July', a: 7, b: 65},
+      {y: 'Aug', a: 9, b: 90}
+    ],
+    xkey: 'y',
+    ykeys: ['a'],
+    labels: ['Series A']
+  });
+
+
+//  $(function() {
+//    $(".dial").knob();
+//  });
 
 });
