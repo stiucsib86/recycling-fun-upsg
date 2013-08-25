@@ -22,28 +22,6 @@
       .container-narrow > hr {
         margin: 30px 0;
       }
-
-      /* Main marketing message and sign up button 
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-       Supporting marketing content 
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }*/
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -64,7 +42,7 @@
     <script id="leaderboard" type="text/html">
       <table class="table table-hover">
       <tr>
-      <th>#</th>
+      <th></th>
       <th>Region</th>
       <th>Recycling rate per person <span>(kg/people)</span> </th>
       <th>Recycling rate per total <span>(%)</span></th>
@@ -77,12 +55,12 @@
       {{/data}}
       </tbody>
       </table>
-      <legend> Legend: <i class="icon-star"></i> badge</legend>
+      <div><small>Legend: <i class="icon-star"></i> badge</small></div>
     </script>
 
     <script id="items" type="text/html" class="partial">
       <tr>
-      <td>{{id}}</td>
+      <td></td>
       <td><a href="#">{{player}}</a></td>
       <td>{{averate_per_house}}</td>
       <td>
@@ -111,38 +89,60 @@
           <li><a href="search/#/">Search Bin</a></li>
           <li><a href="search/#/user">User Profile</a></li>
         </ul>
+
         <h1 class="muted">Recycle Fun!</h1>
-        <!--   <form class="navbar-search pull-right">
-            <input type="text" class="search-query" placeholder="Search">
-          </form>
-        -->
 
         <hr>
+
+        <h2>Leaderboard</h2>
+        
         <div class="row-fluid marketing">
-          <div class="span3">
-            <ul class="nav nav-list" id="categories">
-              <li class="nav-header">Categories</li>
-              <li class="active"><a href="#">All</a></li>
-              <li><a href="#">Paper</a></li>
-              <li><a href="#">Cans</a></li>
-              <li><a href="#">Plastic</a></li>
-              <li><a href="#">Glass</a></li>
-            </ul>
+          <div class="span12">
 
-
-          </div>
-
-          <div class="span9">
-            <h4>Leaderboard</h4>
-            <div id="leaderboard_main">
-
+            <div class="bs-docs-example">
+              <ul id="myTab" class="nav nav-tabs">
+                <li class="active"><a href="#r_all" data-toggle="tab">All</a></li>
+                <li class=""><a href="#r_paper" data-toggle="tab">Paper</a></li>
+                <li class=""><a href="#r_can" data-toggle="tab">Can</a></li>
+                <li class=""><a href="#r_glass" data-toggle="tab">Glass</a></li>
+                <li class=""><a href="#r_plastic" data-toggle="tab">Plastic</a></li>
+                <li class=""><a href="#r_cloth" data-toggle="tab">Cloth</a></li>
+                <li class=""><a href="#r_garden" data-toggle="tab">Garden</a></li>
+                <li class=""><a href="#r_misc" data-toggle="tab">misc</a></li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active in" id="r_all">
+                  <div id="leaderboard_all"></div>
+                </div>
+                <div class="tab-pane fade active in" id="r_paper">
+                  <div id="leaderboard_paper"></div>
+                </div>
+                <div class="tab-pane fade" id="r_can">
+                  <div id="leaderboard_can"></div>
+                </div>
+                <div class="tab-pane fade" id="r_glass">
+                  <div id="leaderboard_glass"></div>
+                </div>
+                <div class="tab-pane fade" id="r_plastic">
+                  <div id="leaderboard_plastic"></div>
+                </div>
+                <div class="tab-pane fade" id="r_cloth">
+                  <div id="leaderboard_cloth"></div>
+                </div>
+                <div class="tab-pane fade" id="r_garden">
+                  <div id="leaderboard_garden"></div>
+                </div>
+                <div class="tab-pane fade" id="r_misc">
+                  <div id="leaderboard_misc"></div>
+                </div>
+              </div>
             </div>
-
-
+            
           </div>
         </div>
 
         <hr>
+        
         <div id="chart_data" class="row-fluid marketing">
           <img src="img/recycling_map.jpg" alt="">
         </div>
@@ -153,102 +153,18 @@
           <p>&copy; RecycleFun 2013</p>
         </div>
 
-      </div> <!-- /container -->
+      </div> 
+    </div>
+    <!-- /container -->
 
-      <!-- Le javascript
-      ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
 
-      <script src="js/jquery-latest.min.js"  type="text/javascript"></script>
-      <script src="js/bootstrap.js"></script>
-      <!-- <script src="js/bootstrap-transition.js"></script>
-       <script src="js/bootstrap-alert.js"></script>
-       <script src="js/bootstrap-modal.js"></script>
-       <script src="js/bootstrap-dropdown.js"></script>
-       <script src="js/bootstrap-scrollspy.js"></script>
-       <script src="js/bootstrap-tab.js"></script>
-       <script src="js/bootstrap-tooltip.js"></script>
-       <script src="js/bootstrap-popover.js"></script>
-       <script src="js/bootstrap-button.js"></script>
-       <script src="js/bootstrap-collapse.js"></script>
-       <script src="js/bootstrap-carousel.js"></script>
-       <script src="js/bootstrap-typeahead.js"></script> -->
-      <script src="js/ICanHaz.js"></script>
+    <script src="js/jquery-latest.min.js"  type="text/javascript"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ICanHaz.js"></script>
+    <script src="js/main.js"></script>
 
-      <script>
-        // function listEvents(root) {
-        //   var feed = root.feed;
-        //   var entries = feed.entry || [];
-
-
-
-        //   // var html = ['<ul>'];
-
-        //   // console.log(entries);
-        //   // for (var i = entries.length - 1; i >= 0; i--) {
-        //   //   var row = $.parseJSON(entries[i].content.$t);
-        //   //   if(!!row){
-        //   //    // console.log(row.player);
-        //   //   }
-        //   // };
-        // }
-      </script>
-
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-
-        var predefined_data =
-        [
-          '[{"ID":"1","player":"Clementi","WasteTotal":"166035","average_per_house":"","recycle_percentage":"","Paper":"94181","Can":"9140","Glass":"19911","Plastic":"29991","Cloth":"8922","Misc":"3890","Garden":"0","Month":"1\/1\/2011","inc":"","dec":"","difference":"","badge":"","id":0},{"ID":"2","player":"AMK","WasteTotal":"12","average_per_house":"","recycle_percentage":"","Paper":"41421","Can":"11","Glass":"12421","Plastic":"124","Cloth":"124","Misc":"123","Garden":"102680","Month":"1\/1\/2011","inc":"","dec":"","difference":"","badge":"","id":1},{"ID":"3","player":"AMK","WasteTotal":"10","average_per_house":"91","recycle_percentage":"12","Paper":"9876","Can":"0","Glass":"12421","Plastic":"124","Cloth":"124","Misc":"123","Garden":"102680","Month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge":"","id":2}]'
-          ,
-          '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]'
-          ,
-          '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]',
-          '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]'
-          ,
-          '[{"id":0,"player":"Clementi","wastetotal":"166035","average_per_house":"","recycle_percentage":"","paper":"94181","can":"9140","glass":"19911","plastic":"29991","cloth":"8922","misc":"3890","garden":"0","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"1","badge2":"0","badge3":"1"},{"id":1,"player":"AMK","wastetotal":"12","average_per_house":"","recycle_percentage":"","paper":"41421","can":"11","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"0","dec":"1","difference":"21","badge1":"0","badge2":"1","badge3":"0"},{"id":2,"player":"Jurong East","wastetotal":"10","average_per_house":"91","recycle_percentage":"12","paper":"9876","can":"0","glass":"12421","plastic":"124","cloth":"124","misc":"123","garden":"102680","month":"1\/1\/2011","inc":"TRUE","dec":"FALSE","difference":"20","badge1":"0","badge2":"0","badge3":"1"}]'
-        ];
-// console.log($.parseJSON(predefined_data[0]));return;
-        var data = [];
-        var p = {};
-        p.data = $.parseJSON($.trim(predefined_data[0]));
-        data['all'] = p;
-        p.data = $.parseJSON($.trim(predefined_data[1]));
-        data['paper'] = p;
-        p.data = $.parseJSON($.trim(predefined_data[2]));
-        data['plastic'] = p;
-        p.data = $.parseJSON($.trim(predefined_data[3]));
-        data['glass'] = p;
-        p.data = $.parseJSON($.trim(predefined_data[4]));
-        data['cans'] = p;
-
-        // var c = $(this).html().toLowerCase();
-        var content = data['all'];
-        // console.log(content);
-        $('#leaderboard_main').html(ich.leaderboard(content));
-
-
-
-        $('#categories').on('click', 'a', function(e) {
-          e.preventDefault();
-          $(this).parent().siblings().removeClass('active');
-          $(this).parent().addClass('active');
-
-
-          var c = $(this).html().toLowerCase();
-          var content = data[c];
-          // console.log(content);
-          $('#leaderboard_main').html(ich.leaderboard(content));
-
-          //insert data to ajax
-
-        });
-        // setInterval(10000,function(){
-        //   localtion.reload();
-        // })
-      });
-    </script>
-
-</body>
+  </body>
 </html>
