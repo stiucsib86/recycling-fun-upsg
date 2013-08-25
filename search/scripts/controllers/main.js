@@ -4,8 +4,7 @@ angular.module('sgRecyclingBinApp')
 .controller('MainCtrl', function($http, $scope, $timeout) {
 
   var OneMap;
-
-
+  
   var initializeOneMap = function() {
     //    //add map with default settings
     //    var OneMap = new GetOneMap('divMain','SM');
@@ -77,6 +76,7 @@ angular.module('sgRecyclingBinApp')
 })
 .controller('UserCtrl', function($http, $scope, $timeout) {
 
+  $scope.currentUrl = encodeURIComponent(window.location.href);
 
   Morris.Donut({
     element: 'donut-example',
