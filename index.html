@@ -60,7 +60,7 @@
     <script id="items" type="text/html" class="partial">
       <tr>
       <td></td>
-      <td><a href="#">{{player}}</a></td>
+      <td><a href="#" class="showChart">{{player}}</a></td>
       <td>{{averate_per_house}}</td>
       <td>
       <div class="progress progress-striped active">
@@ -145,7 +145,11 @@
         <hr>
         
         <div id="chart_data" class="row-fluid marketing">
-          <img src="img/recycling_map.jpg" alt="">
+           <div class="span12">
+            <div id="visualization" class="span8" style="width: 60%;display:none" ></div>
+            <div id="pie_id" class="span4" style="width: 40%;;display:none"></div>
+            <img id="recycling_map" src="img/recycling_map.jpg" alt="">
+          </div>
         </div>
 
         <hr>
