@@ -8,13 +8,13 @@ $(document).ready(function() {
     [
       {"id": 1, "player": "Jurong", "wastetotal": "475,918", "average_per_house": "0.5592", "recycle_percentage": "5.48", "paper": "330887", "can": "9137", "glass": "16653", "plastic": "49460", "cloth": "30347", "misc": "39434", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "21", "badge1": 1, "badge2": 1, "badge3": 1},
       {"id": 2, "player": "Clementi", "wastetotal": "211,048", "average_per_house": "0.3015", "recycle_percentage": "2.35", "paper": "117350", "can": "13522", "glass": "36548", "plastic": "35094", "cloth": "3401", "misc": "5133", "garden": "0", "month": "1\/1\/2013", "inc": 0, "dec": 1, "difference": "12", "badge1": 1, "badge2": 0, "badge3": 1},
-      {"id": 3, "player": "Bedok", "wastetotal": "378,806", "average_per_house": "0.5623", "recycle_percentage": "4.16", "paper": "165252", "can": "9251", "glass": "77517", "plastic": "76018", "cloth": "14347", "misc": "36421", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},	
+      {"id": 3, "player": "Bedok", "wastetotal": "378,806", "average_per_house": "0.5623", "recycle_percentage": "4.16", "paper": "165252", "can": "9251", "glass": "77517", "plastic": "76018", "cloth": "14347", "misc": "36421", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},
       {"id": 4, "player": "City", "wastetotal": "98,223", "average_per_house": "0.1087", "recycle_percentage": "0.70", "paper": "49501", "can": "6818", "glass": "18341", "plastic": "17733", "cloth": "2362", "misc": "3468", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},
       {"id": 5, "player": "HG-PG", "wastetotal": "236,259", "average_per_house": "0.3390", "recycle_percentage": "1.11", "paper": "142419", "can": "13781", "glass": "36216", "plastic": "35521", "cloth": "3952", "misc": "4370", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": "FALSE", "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},
       {"id": 6, "player": "PRT", "wastetotal": "339,657", "average_per_house": "0.5639", "recycle_percentage": "2.76", "paper": "110111", "can": "6143", "glass": "114117", "plastic": "95021", "cloth": "14265", "misc": "123", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},
-      {"id": 7, "player": "AMK", "wastetotal": "176,144", "average_per_house": "0.1978", "recycle_percentage": "1.13", "paper": "35282", "can": "8756", "glass": "36636", "plastic": "32481", "cloth": "18423", "misc": "44566", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},      
-      {"id": 8, "player": "TBM", "wastetotal": "309,220", "average_per_house": "0.3931", "recycle_percentage": "1.98", "paper": "88213", "can": "8044", "glass": "105949", "plastic": "92355", "cloth": "13148", "misc": "1511", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},	
-      {"id": 9, "player": "WL-Y", "wastetotal": "285,822", "average_per_house": "0.6055", "recycle_percentage": "2.08", "paper": "167031", "can": "14142", "glass": "45832", "plastic": "45545", "cloth": "6952", "misc": "6320", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1}  
+      {"id": 7, "player": "AMK", "wastetotal": "176,144", "average_per_house": "0.1978", "recycle_percentage": "1.13", "paper": "35282", "can": "8756", "glass": "36636", "plastic": "32481", "cloth": "18423", "misc": "44566", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},
+      {"id": 8, "player": "TBM", "wastetotal": "309,220", "average_per_house": "0.3931", "recycle_percentage": "1.98", "paper": "88213", "can": "8044", "glass": "105949", "plastic": "92355", "cloth": "13148", "misc": "1511", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1},
+      {"id": 9, "player": "WL-Y", "wastetotal": "285,822", "average_per_house": "0.6055", "recycle_percentage": "2.08", "paper": "167031", "can": "14142", "glass": "45832", "plastic": "45545", "cloth": "6952", "misc": "6320", "garden": "0", "month": "1\/1\/2013", "inc": 1, "dec": 0, "difference": "20", "badge1": 0, "badge2": 0, "badge3": 1}
     ],
     [
       {"id": 1, "player": "AMK", "wastetotal": "12", "average_per_house": "", "recycle_percentage": "", "paper": "41421", "can": "11", "glass": "12421", "plastic": "124", "cloth": "124", "misc": "123", "garden": "102680", "month": "1\/1\/2011", "inc": "0", "dec": "1", "difference": "21", "badge1": "0", "badge2": "1", "badge3": "0"},
@@ -106,11 +106,14 @@ $(document).ready(function() {
     $('#leaderboard_' + type).html(ich.leaderboard(content));
   }
 
-  $(document).on('click','.showChart',function(e){
+  $(document).on('click', '.showChart', function(e) {
     e.preventDefault();
     $('#recycling_map').hide();
     $('#pie_id,#visualization').show();
+    $('html, body').animate({
+      scrollTop: $("#visualization").offset().top
+    }, 1000);
   });
-  
+
 
 });

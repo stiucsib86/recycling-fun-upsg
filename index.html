@@ -61,11 +61,14 @@
     <script id="items" type="text/html" class="partial">
       <tr>
       <td>{{id}}</td>
-      <td><a href="#" class="showChart">{{player}}</a></td>
+      <td><a href="#chart_data" class="showChart">{{player}}</a></td>
       <td>{{average_per_house}}</td>
       <td>
-        <div class="progress progress-striped active">
-          <div class="bar" style="width: {{recycle_percentage}}%;"></div>
+        <div style="position:relative;">
+          <div style="position: absolute;right: 10px;">{{recycle_percentage}}%</div>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: {{recycle_percentage}}%;"></div>
+          </div>
         </div>
       </td>
       <td>{{wastetotal}}</td>
@@ -98,7 +101,7 @@
         <hr>
 
         <h2>Recycling Champion</h2>
-        
+
         <div class="row-fluid marketing">
           <div class="span12">
 
@@ -140,16 +143,16 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
 
         <hr>
-        
+
         <div id="chart_data" class="row-fluid marketing">
-           <div class="span12">
-            <div id="visualization" class="span8" style="display:none" ></div>
-            <div id="pie_id" class="span4" style="display:none"></div>
+          <div class="span12">
+            <div id="visualization" style="display:none" ></div>
+            <div id="pie_id" style="display:none"></div>
             <img id="recycling_map" src="img/recycling_map.jpg" alt="">
           </div>
         </div>
@@ -172,49 +175,49 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/ICanHaz.js"></script>
     <script src="js/main.js"></script>
-    
+
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">
-      google.load('visualization', '1', {packages: ['corechart']});
+google.load('visualization', '1', {packages: ['corechart']});
     </script>
     <script type="text/javascript">
-    var visualization;
-    var visualization2;
+      var visualization;
+      var visualization2;
 
-    function drawVisualization() {
-      var query = new google.visualization.Query(
-          'https://spreadsheets.google.com/tq?key=0Ap3K3Evv9lLsdGdtTGpWTXZtS1NMS2dPaURIV2tLekE&pub=1');
-     
-      // Apply query language.
-      query.setQuery("SELECT E,F,G,H,I,J,M,L WHERE B = 'Clementi' ORDER BY M");
-  
-      // Send the query with a callback function.
-      query.send(handleQueryResponse);
-    }
-    
-    function handleQueryResponse(response) {
-      if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
+      function drawVisualization() {
+        var query = new google.visualization.Query(
+        'https://spreadsheets.google.com/tq?key=0Ap3K3Evv9lLsdGdtTGpWTXZtS1NMS2dPaURIV2tLekE&pub=1');
+
+        // Apply query language.
+        query.setQuery("SELECT E,F,G,H,I,J,M,L WHERE B = 'Clementi' ORDER BY M");
+
+        // Send the query with a callback function.
+        query.send(handleQueryResponse);
       }
-    
-      var dataTable = response.getDataTable();
-      
-      //construct view for 2 different charts
-      var dataView_bar = new google.visualization.DataView(dataTable);
-      dataView_bar.setColumns([6, 7]);
-            
-      visualization = new google.visualization.BarChart(document.getElementById('visualization'));
-      // Set chart options
-      var options = {'title':'Clementi Recycle over times (kg)',
-                       'width':400,
-                       'height':266,
-      };             
-      visualization.draw(dataView_bar, options);
-      
-      var pie_chart = new google.visualization.PieChart(document.getElementById('pie_id'));
-      
-       var data = new google.visualization.DataTable();
+
+      function handleQueryResponse(response) {
+        if (response.isError()) {
+          alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+          return;
+        }
+
+        var dataTable = response.getDataTable();
+
+        //construct view for 2 different charts
+        var dataView_bar = new google.visualization.DataView(dataTable);
+        dataView_bar.setColumns([6, 7]);
+
+        visualization = new google.visualization.BarChart(document.getElementById('visualization'));
+        // Set chart options
+        var options = {'title': 'Clementi Recycle over times (kg)',
+          'width': 700,
+          'height': 500
+        };
+        visualization.draw(dataView_bar, options);
+
+        var pie_chart = new google.visualization.PieChart(document.getElementById('pie_id'));
+
+        var data = new google.visualization.DataTable();
         data.addColumn('string', 'Category');
         data.addColumn('number', 'Kg');
         data.addRows([
@@ -225,19 +228,19 @@
           ['Cloth', 3401],
           ['Miscellaneous', 5133]
         ]);
-        
-      // Set chart options
-      var options_pie = {'title':'Clementi Recycle Category',
-                       'width':200,
-                       'height':300,
-                       is3D:true,
-      };
-                       
-      pie_chart.draw(data, options_pie);
-    }
-    /****************/
-    
-    google.setOnLoadCallback(drawVisualization);
+
+        // Set chart options
+        var options_pie = {'title': 'Clementi Recycle Category',
+          'width': 700,
+          'height': 300,
+          is3D: true
+        };
+
+        pie_chart.draw(data, options_pie);
+      }
+      /****************/
+
+      google.setOnLoadCallback(drawVisualization);
     </script>
 
   </body>
