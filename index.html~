@@ -55,6 +55,7 @@
       {{/data}}
       </tbody>
       </table>
+      <div><small>Legend: <i class="icon-star"></i> badge</small></div>
     </script>
 
     <script id="items" type="text/html" class="partial">
@@ -71,13 +72,11 @@
       {{#inc}}<i class="icon-arrow-up"></i>{{/inc}} 
       {{#dec}}<i class="icon-arrow-down"></i>{{/dec}} 
       {{difference}}</td>
-      
-      <td style="width:75px">
-          {{#badge1}}<img src="img/badge1.jpg" height=25 width=25 >{{/badge1}}
-          {{#badge2}}<img src="img/badge2.jpg" height=25 width=25 >{{/badge2}}
-          {{#badge3}}<img src="img/badge3.jpg" height=25 width=25 >{{/badge3}}
+      <td>
+      {{#badge1}}<i class="icon-star"></i>{{/badge1}}
+      {{#badge2}}<i class="icon-search"></i>{{/badge2}}
+      {{#badge3}}<i class="icon-plus"></i>{{/badge3}}
       </td>
-          
       </tr>
     </script>
 
@@ -166,73 +165,6 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/ICanHaz.js"></script>
     <script src="js/main.js"></script>
-    
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load('visualization', '1', {packages: ['corechart']});
-    </script>
-    <script type="text/javascript">
-    var visualization;
-    var visualization2;
-
-    function drawVisualization() {
-      var query = new google.visualization.Query(
-          'https://spreadsheets.google.com/tq?key=0Ap3K3Evv9lLsdGdtTGpWTXZtS1NMS2dPaURIV2tLekE&pub=1');
-     
-      // Apply query language.
-      query.setQuery("SELECT E,F,G,H,I,J,M,L WHERE B = 'Clementi' ORDER BY M");
-  
-      // Send the query with a callback function.
-      query.send(handleQueryResponse);
-    }
-    
-    function handleQueryResponse(response) {
-      if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
-      }
-    
-      var dataTable = response.getDataTable();
-      
-      //construct view for 2 different charts
-      var dataView_bar = new google.visualization.DataView(dataTable);
-      dataView_bar.setColumns([6, 7]);
-            
-      visualization = new google.visualization.BarChart(document.getElementById('visualization'));
-      // Set chart options
-      var options = {'title':'Clementi Recycle over times (kg)',
-                       'width':600,
-                       'height':400,
-      };             
-      visualization.draw(dataView_bar, options);
-      
-      var pie_chart = new google.visualization.PieChart(document.getElementById('pie_id'));
-      
-       var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Category');
-        data.addColumn('number', 'Kg');
-        data.addRows([
-          ['Paper', 117350],
-          ['Can', 13522],
-          ['Glass', 36548],
-          ['Plastic', 35094],
-          ['Cloth', 3401],
-          ['Miscellaneous', 5133]
-        ]);
-        
-      // Set chart options
-      var options_pie = {'title':'Clementi Recycle Category',
-                       'width':400,
-                       'height':600,
-                       is3D:true,
-      };
-                       
-      pie_chart.draw(data, options_pie);
-    }
-    /****************/
-    
-    google.setOnLoadCallback(drawVisualization);
-    </script>
 
   </body>
 </html>
