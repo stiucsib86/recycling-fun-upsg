@@ -149,13 +149,21 @@
 
         <hr>
 
-        <div id="chart_data" class="row-fluid marketing">
-          <div class="span12">
-            <div id="visualization" style="display:none" ></div>
-            <div id="pie_id" style="display:none"></div>
-            <img id="recycling_map" src="img/recycling_map.jpg" alt="">
+        <div id="chart_data" style="display:none">
+          <div class="well">
+            <div class="row-fluid marketing">
+              <div class="span12">
+                <div id="visualization"></div>
+                <div id="pie_id"></div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        
+        <img id="recycling_map" src="img/recycling_map.jpg" alt="">
 
         <hr>
 
@@ -210,7 +218,7 @@ google.load('visualization', '1', {packages: ['corechart']});
         visualization = new google.visualization.BarChart(document.getElementById('visualization'));
         // Set chart options
         var options = {'title': 'Clementi Recycle over times (kg)',
-          'width': 700,
+          'width': 660,
           'height': 500
         };
         visualization.draw(dataView_bar, options);
@@ -231,7 +239,7 @@ google.load('visualization', '1', {packages: ['corechart']});
 
         // Set chart options
         var options_pie = {'title': 'Clementi Recycle Category',
-          'width': 700,
+          'width': 660,
           'height': 300,
           is3D: true
         };

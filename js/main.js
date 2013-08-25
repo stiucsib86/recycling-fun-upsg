@@ -108,8 +108,8 @@ $(document).ready(function() {
 
   $(document).on('click', '.showChart', function(e) {
     e.preventDefault();
-    $('#recycling_map').hide();
-    $('#pie_id,#visualization').show();
+    //$('#recycling_map').hide();
+    $('#chart_data').show();
     $('html, body').animate({
       scrollTop: $("#visualization").offset().top
     }, 1000);
