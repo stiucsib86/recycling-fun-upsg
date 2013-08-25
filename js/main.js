@@ -106,7 +106,8 @@ $(document).ready(function() {
     $('#leaderboard_' + type).html(ich.leaderboard(content));
   }
 
-  $(document).on('click','showChart',function(){
+  $(document).on('click','.showChart',function(e){
+    e.preventDefault();
     $('#recycling_map').hide();
     $('#pie_id,#visualization').show();
   });
