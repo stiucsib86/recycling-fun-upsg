@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Recycling Fun</title>
+    <title>Recycle IT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -42,11 +42,12 @@
     <script id="leaderboard" type="text/html">
       <table class="table table-hover">
       <tr>
-      <th></th>
+      <th>#</th>
       <th>Region</th>
-      <th>Recycling rate per person <span>(kg/people)</span> </th>
-      <th>Recycling rate per total <span>(%)</span></th>
-      <th>Difference to the previous month <span>(%)</span></th>
+      <th style="width:120px">Recycling contribution per person <span>(kg/people)</span> </th>
+      <th>Recycling rate <span>(%)</span></th>
+      <th>Waste Total (kg)</th>
+      <th>Difference to previous month <span>(kg)</span></th>
       <th>Badge</th>
       </tr>
       <tbody>
@@ -59,14 +60,15 @@
 
     <script id="items" type="text/html" class="partial">
       <tr>
-      <td></td>
+      <td>{{id}}</td>
       <td><a href="#" class="showChart">{{player}}</a></td>
-      <td>{{averate_per_house}}</td>
+      <td>{{average_per_house}}</td>
       <td>
-      <div class="progress progress-striped active">
-      <div class="bar" style="width: {{recycle_percentage}}%;"></div>
-      </div>
+        <div class="progress progress-striped active">
+          <div class="bar" style="width: {{recycle_percentage}}%;"></div>
+        </div>
       </td>
+      <td>{{wastetotal}}</td>
       <td> 
       {{#inc}}<i class="icon-arrow-up"></i>{{/inc}} 
       {{#dec}}<i class="icon-arrow-down"></i>{{/dec}} 
@@ -91,11 +93,11 @@
           <li><a href="search/#/user">User Profile</a></li>
         </ul>
 
-        <h1 class="muted">Recycle Fun!</h1>
+        <h1 >Recycle IT</h1>
 
         <hr>
 
-        <h2>Leaderboard</h2>
+        <h2>Recycling Champion</h2>
         
         <div class="row-fluid marketing">
           <div class="span12">
@@ -146,8 +148,8 @@
         
         <div id="chart_data" class="row-fluid marketing">
            <div class="span12">
-            <div id="visualization" class="span8" style="width: 60%;display:none" ></div>
-            <div id="pie_id" class="span4" style="width: 40%;;display:none"></div>
+            <div id="visualization" class="span8" style="display:none" ></div>
+            <div id="pie_id" class="span4" style="display:none"></div>
             <img id="recycling_map" src="img/recycling_map.jpg" alt="">
           </div>
         </div>
@@ -205,8 +207,8 @@
       visualization = new google.visualization.BarChart(document.getElementById('visualization'));
       // Set chart options
       var options = {'title':'Clementi Recycle over times (kg)',
-                       'width':600,
-                       'height':400,
+                       'width':400,
+                       'height':266,
       };             
       visualization.draw(dataView_bar, options);
       
@@ -226,8 +228,8 @@
         
       // Set chart options
       var options_pie = {'title':'Clementi Recycle Category',
-                       'width':400,
-                       'height':600,
+                       'width':200,
+                       'height':300,
                        is3D:true,
       };
                        
